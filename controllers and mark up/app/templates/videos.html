@@ -1,0 +1,13 @@
+<ul>
+    <li ng-repeat="video in videos | filter: filters | orderBy: orders">
+        {{video.title}}
+        <img ng-src="{{video.pictureUrl}}" />
+        {{video.length}}
+        {{video.date | date:'dd-MMM-yyyy'}}
+        {{video.subscribers}}
+        {{video.category}}
+    </li>
+</ul>
+<p>
+    <a href="#/add" class="button">Add video</a>
+<p>

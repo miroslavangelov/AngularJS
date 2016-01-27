@@ -1,0 +1,50 @@
+<div class="box">
+    <h2>Confirm deleting ad?</h2>
+    <p>
+        <label for="title">Title:</label>
+        <input disabled type="text" id="title" ng-model="adminAdData.title" required />
+    </p>
+    <p>
+        <label for="text">Text:</label>
+        <textarea disabled id="text" ng-model="adminAdData.text" required></textarea>
+    </p>
+    <p>
+        Image:
+    <div class="image-box">
+        <img ng-if="adminAdData.imageDataUrl" ng-src="{{adminAdData.imageDataUrl}}" />
+    </div>
+    </p>
+    <p>
+        <label for="category">Category:</label>
+        <input disabled type="text" id="category" ng-model="adminAdData.categoryName" required />
+    </p>
+    <p>
+        <label for="town">Town:</label>
+        <input disabled type="text" id="town" ng-model="adminAdData.townName" required />
+    </p>
+    <p>
+        <label for="username">Username:</label>
+        <input disabled type="text" id="username" ng-model="adminAdData.ownerUsername" required />
+    </p>
+    <p>
+        <label for="name">Name:</label>
+        <input disabled type="text" id="name" ng-model="adminAdData.ownerName" required />
+    </p>
+    <p>
+        <label for="email">Email:</label>
+        <input disabled type="text" id="email" ng-model="adminAdData.ownerEmail" required />
+    </p>
+    <p>
+        <label for="phone">Phone:</label>
+        <input disabled type="text" id="phone" ng-model="adminAdData.ownerPhone" required />
+    </p>
+    <p>
+        <label for="date">Date:</label>
+        <input disabled type="text" id="date" ng-model="adminAdData.date" required />
+    </p>
+
+    <p>
+        <a ng-click="adminDeleteAd(adminAdData)" class="button">Delete</a>
+        <a href="#/admin/ads" class="button">Cancel</a>
+    </p>
+</div>

@@ -1,0 +1,9 @@
+<div class="box">
+    <h2>Confirm deleting town?</h2>
+    <label for="name">Town:</label>
+    <input type="text" id="name" ng-model="adminTownData.name" disabled />
+    <p>
+        <a ng-click="adminDeleteTown(adminTownData)" class="button">Delete</a>
+        <a href="#/admin/towns" class="button">Cancel</a>
+    </p>
+</div>

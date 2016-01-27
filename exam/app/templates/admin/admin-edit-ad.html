@@ -1,0 +1,58 @@
+<div class="box">
+    <h2>Edit Ad</h2>
+    <p>
+        <label for="title">Title:</label>
+        <input type="text" id="title" ng-model="adminAdData.title" required />
+    </p>
+    <p>
+        <label for="text">Text:</label>
+        <textarea id="text" ng-model="adminAdData.text" required></textarea>
+    </p>
+    <p>
+        <label for="category">Category:</label>
+        <select id="category" ng-model="adminAdData.categoryId">
+            <option value="null">(None)</option>
+            <option ng-repeat="category in adminCategories.categories" value="{{category.id}}">{{category.username}}</option>
+        </select>
+    </p>
+    <p>
+        <label for="status">Status:</label>
+        <select id="status" ng-model="adminAdData.status">
+            <option value="null">(None)</option>
+            <option value="WaitingApproval">WaitingApproval</option>
+            <option value="Inactive">Inactive</option>
+            <option value="Published">Published</option>
+            <option value="Rejected">Rejected</option>
+        </select>
+    </p>
+    <p>
+        <label for="date">Date:</label>
+        <input type="text" id="date" ng-model="adminAdData.date" required>
+    </p>
+    <p>
+        <label for="username">Username:</label>
+        <input type="text" id="username" ng-model="adminAdData.ownerUsername" required />
+    </p>
+    <p>
+        <label for="town">Town:</label>
+        <select id="town" ng-model="adminAdData.townId">
+            <option value="null">(None)</option>
+            <option ng-repeat="town in adminTowns.towns" value="{{town.id}}">{{town.username}}</option>
+        </select>
+    </p>
+    <p>
+        <label for="image">Image:</label>
+
+        <input type="file" id="image"
+               onchange="angular.element(this).scope().fileSelected(this)" />
+
+    <div class="image-box">
+        <p ng-if="!adminAdData.imageDataUrl">Image Preview</p><img ng-if="adminAdData.imageDataUrl" ng-src="{{adminAdData.imageDataUrl}}" />
+    </div>
+    <a ng-click="deleteImage()" class="button">Delete image</a>
+    </p>
+    <p>
+        <a ng-click="adminEditAd(adminAdData)" class="button">Edit</a>
+        <a href="#/admin/ads" class="button">Cancel</a>
+    </p>
+</div>

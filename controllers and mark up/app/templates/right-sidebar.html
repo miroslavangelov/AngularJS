@@ -1,0 +1,60 @@
+<div class="box">
+    <h2>Categories</h2>
+    <ul class="sidebar-menu">
+        <li class="special"
+            ng-class="{'selected' : selectedCategoryName == null}"
+            ng-click="categoryClicked('')">
+            All
+        </li>
+        <li ng-repeat="category in categories"
+            ng-click="categoryClicked(category.name)"
+            ng-class="{'selected' : selectedCategoryName == category.name}">
+            {{category.name}}
+        </li>
+    </ul>
+</div>
+<div class="box">
+    <h2>Have subtitles</h2>
+    <ul class="sidebar-menu">
+        <li class="special"
+            ng-class="{'selected' : selectedSubtitles == null}"
+            ng-click="subtitleClicked('')">
+            All
+        </li>
+        <li class="special"
+            ng-class="{'selected' : selectedSubtitles == true}"
+            ng-click="subtitleClicked(true)">
+            Yes
+        </li>
+        <li class="special"
+            ng-click="subtitleClicked(false)"
+            ng-class="{'selected' : selectedSubtitles == false}">
+            No
+        </li>
+    </ul>
+</div>
+<div class="box">
+    <h2>Order by</h2>
+    <ul class="sidebar-menu">
+        <li class="special"
+            ng-class="{'selected' : selectedOrder === 'title'}"
+            ng-click="orderByTitle('title')">
+            Title
+        </li>
+        <li class="special"
+            ng-class="{'selected' : selectedOrder === 'length'}"
+            ng-click="orderByLength('length')">
+            Length
+        </li>
+        <li class="special"
+            ng-class="{'selected' : selectedOrder === 'subscribers'}"
+            ng-click="orderByLikes('subscribers')">
+            Subscribers
+        </li>
+        <li class="special"
+            ng-class="{'selected' : selectedOrder === 'date'}"
+            ng-click="orderByDate('date')">
+            Date
+        </li>
+    </ul>
+</div>

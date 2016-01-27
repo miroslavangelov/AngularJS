@@ -1,0 +1,9 @@
+<div class="box">
+    <h2>Confirm deleting category?</h2>
+    <label for="name">Category:</label>
+    <input type="text" id="name" ng-model="adminCategoryData.name" disabled />
+    <p>
+        <a ng-click="adminDeleteCategory(adminCategoryData)" class="button">Delete</a>
+        <a href="#/admin/categories" class="button">Cancel</a>
+    </p>
+</div>

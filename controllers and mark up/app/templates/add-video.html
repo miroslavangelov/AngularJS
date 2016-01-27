@@ -1,0 +1,23 @@
+<div class="box">
+    <h2>Add video</h2>
+    <p>
+        <label for="title">Title:</label>
+        <input type="text" id="title" ng-model="videoData.title" required />
+    </p>
+    <p>
+        <label for="image">Image:</label>
+        <input required type="file" id="image" onchange="angular.element(this).scope().fileSelected(this)" />
+        <div class="image-box">
+            <p>Image Preview</p>
+        </div>
+    </p>
+    <p>
+        <label for="category">Category:</label>
+        <select required id="category" ng-model="videoData.category">
+            <option ng-repeat="category in categories" value="{{category.name}}">{{category.name}}</option>
+        </select>
+    </p>
+    <p>
+        <a ng-click="addVideo(videoData)" class="button">Add</a>
+    <p>
+</div>

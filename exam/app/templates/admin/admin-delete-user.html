@@ -1,0 +1,28 @@
+<div class="col-md-6 well">
+    <h2>Confirm deleting user?</h2>
+    <p>
+        <label for="username">Username:</label>
+        <input type="text" id="username" ng-model="adminUserData.userName" disabled/>
+
+    </p>
+    <p>
+        <label for="name">Name:</label>
+        <input type="text" id="name" ng-model="adminUserData.name" disabled />
+    </p>
+    <p>
+        <label for="email">Email:</label>
+        <input type="text" id="email" ng-model="adminUserData.email" disabled />
+    </p>
+    <p>
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" ng-model="adminUserData.phoneNumber" disabled/>
+    </p>
+    <p>
+        <label for="town">Town:</label>
+        <input type="text" id="town" ng-model="adminUserData.town.name" disabled/>
+    </p>
+    <p>
+        <a ng-click="adminDeleteUser(adminUserData)" class="button">Delete</a>
+        <a href="#/admin/users" class="button">Cancel</a>
+    <p>
+</div>

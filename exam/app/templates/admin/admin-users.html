@@ -1,0 +1,39 @@
+<div ng-if="authService.isAdmin()">
+    <pagination total-items="adminUsers.numItems" ng-model="adminUserParams.startPage"
+                items-per-page="adminUserParams.pageSize" ng-change="adminGetUsers()"
+                max-size="9" boundary-links="true">
+    </pagination>
+
+    <table class="table table-boarded">
+        <tr>
+            <th>Username</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Action</th>
+        </tr>
+        <tr ng-repeat="user in adminUsers.users">
+            <td>
+                {{user.username}}
+            </td>
+            <td>
+                {{user.name}}
+            </td>
+            <td>
+                {{user.email}}
+            </td>
+            <td>
+                {{user.phoneNumber}}
+            </td>
+            <td>
+                <a href="#/admin/users/edit/{{user.id}}" class="button">Edit</a>
+                <a href="#/admin/users/delete/{{user.id}}" class="button">Delete</a>
+            </td>
+        </tr>
+    </table>
+
+
+    <div ng-if="adminUsers.users.length===0" class="box no-data">
+        No users found.
+    </div>
+</div>
